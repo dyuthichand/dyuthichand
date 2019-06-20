@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.Elist{
+  display: inline-block;
+  padding: 20px;
+  color: #fff;
+  vertical-align: top;
+  line-height: 25px;
+}
+.OfficeSkills{
+
+  background: #282c34;
+}
+.Resuls{
+  border:2px solid #fff;
+}
+.Ename,.Eskill,.Eproficiency{
+
+  vertical-align: top;
+  padding: 20px;
+}
+.Ename,.skcover{
+  display: inline-block;
+}
+.Resuls .Elists:nth-child(2n+2) {
+  background: #3050ab;
+}

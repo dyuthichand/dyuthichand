@@ -1,69 +1,81 @@
-  import React from 'react';
-  import './App.css';
-  import Quizz from './Quizz.js';
-  class App extends React.Component{
-    constructor(){
-      super()
+import React, {Component} from 'react';
+import EmployeeList from './components/EmployeeList.js';
+import SkillSeteList from './components/SkillSeteList.js';
+import Proficiency from './components/Proficiency.js';
+import Data from './components/emp_data.json';
+import './index.css';
+import ShortList from "./components/ShortList";
 
-      this.startQuiz=this.startQuiz.bind(this)
-      this.state ={
-        step:0
-      }
+class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            sList: [],
+            submitForm: false,
+            Data: Data
+        };
+
+        this.handleOnchange = this.handleOnchange.bind(this)
+        this.selectChange = this.selectChange.bind(this)
+        this.clickSkill = this.clickSkill.bind(this)
     }
-    startQuiz(){
-fetch('https://opentdb.com/api.php?amount=10').
-then(response => response.json()).then((data) =>
-{
-  let quizzArray = [];
-  let Answers = [];
-  let anserSet = [];
 
-  let eachq,eachAnswer,eachRightAns;
-for(eachq in data.results){
-  
-  quizzArray.push(`<div> ${data.results[eachq].question} </div>`)
+    clickSkill(e) {
+        var skillis = e.target.innerText;
+        var jsonData = this.state.Data.employees;
+        var theIndex = [];
+       // for (var i in jsonData) {
+        for (var i = 0;  i<= jsonData.length; i++) {
+
+            if (jsonData[i].skillset[i].skill === skillis) {
+           theIndex.push(jsonData[i])
+
+            }
+        }
+   // console.log(theIndex)
+
+    }
+
+    handleOnchange(e) {
+        var selectedE = this.state.sList
+        selectedE.push(e.target.id);
+        e.target.style.color = "#ff0000"
+        e.target.className = "select";
+
+        this.setState({
+            sList: selectedE
+        })
+    }
+
+    selectChange(event) {
+
+        this.setState({
+            submitForm: !(this.state.submitForm)
+        })
+        event.preventDefault()
+    }
+
+    render() {
+        var Datas = Data
+        return (
+            <div className="OfficeSkills">
+                <div className="container">
+                    <form>
+                        <EmployeeList eList={Datas} fun={this.handleOnchange}/>
+                        <SkillSeteList click={this.clickSkill} eList={Datas}/>
+                        <Proficiency eList={Datas}/>
+                        <br/>
+                        <button onClick={this.selectChange}>Select</button>
+                        {this.state.submitForm ? <ShortList eList={Datas} currentState={this.state.sList}/> : null}
+                    </form>
+                </div>
+            </div>
+        )
+    }
 }
-  for(eachAnswer in data.results){
-   let anserSet1 = data.results[eachAnswer].incorrect_answers + data.results[eachAnswer].correct_answer;
-    ;
 
-   anserSet.push(anserSet1)
-
-  }
-  var theset = quizzArray.concat(anserSet);
-
-  theset.forEach((Questions,QuestionsNumber) => {
-    console.log(theset)
-  })
-
-})
-    .catch((error) => console.log(error))
-    }
-    render(){
-
-    return (
-      <div className="App container">
-        <Quizz quizStart={this.startQuiz} />
-
-      </div>
-    );
-    }
-  }
-
-  export default App;
+export default App;
 
 
 
-  // data.results.forEach((Questions,QuestionsNumber) => {
-  //   //
-  //   let i;
-  //   for(i in Questions.incorrect_answers){
-  //     let ans=`<label><input type="radio" value=${Questions.incorrect_answers[i]} /> </label>`
-  //     Answers.push(ans)
-  //     //  console.log(Questions.incorrect_answers[i])
-  //   }
-  //   let eachQuestion=`<p> ${Questions.question}</p><div>${Questions.incorrect_answers}</div>`
-  //   //  quizzArray.push(eachQuestion)
-  //
-  //
-  // })
+

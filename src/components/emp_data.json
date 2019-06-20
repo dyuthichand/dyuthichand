@@ -1,0 +1,58 @@
+{"employees": [
+        {
+            "id": "0",
+            "name":"dyumna",
+            "skillset" : [
+                { "skill": "js",
+                "proficiency": "intermediate" },
+
+                { "skill": "html",
+                    "proficiency": "novice" },
+                { "skill": "css",
+                    "proficiency": "intermediate" }
+            ]
+        },
+        {
+            "id": "1",
+            "name":"anu",
+            "skillset" : [
+                { "skill": "js",
+                    "proficiency": "intermediate" },
+                { "skill": "php",
+                    "proficiency": "beginner" },
+                { "skill": "html",
+                    "proficiency": "novice" },
+                { "skill": "css",
+                    "proficiency": "novice" }
+            ]
+        },
+        {
+            "id": "2",
+            "name":"aadi",
+            "skillset" : [
+                { "skill": "js",
+                    "proficiency": "intermediate" },
+                { "skill": "php",
+                    "proficiency": "beginner" },
+                { "skill": "html",
+                    "proficiency": "novice" },
+                { "skill": "css",
+                    "proficiency": "novice" }
+            ]
+        },
+    {
+        "id": "3",
+        "name":"alex",
+        "skillset" : [
+            { "skill": "js",
+                "proficiency": "intermediate" },
+            { "skill": "php",
+                "proficiency": "novice" },
+            { "skill": "html",
+                "proficiency": "intermediate" },
+            { "skill": "css",
+                "proficiency": "novice" }
+        ]
+    }
+    ]
+}
