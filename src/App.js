@@ -37,7 +37,7 @@ class App extends Component {
     }
 
     handleOnchange(e) {
-        var selectedE = this.state.sList
+            var selectedE = this.state.sList
         selectedE.push(e.target.id);
         e.target.style.color = "#ff0000"
         e.target.className = "select";
@@ -75,7 +75,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-

@@ -1,6 +1,7 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
+"homepage": "https://dyuthichand.github.io/dyuthichand.github.io",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,6 +9,9 @@
       "type": "image/x-icon"
     }
   ],
+"scripts": {"predeploy": "yarn run build",
+		"deploy": "gh-pages -d build"},
+
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
