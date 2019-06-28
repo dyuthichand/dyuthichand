@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/skill-matrix/static/css/main.5a77a170.chunk.css",
+    "main.js": "/skill-matrix/static/js/main.2231dd16.chunk.js",
+    "main.js.map": "/skill-matrix/static/js/main.2231dd16.chunk.js.map",
+    "runtime~main.js": "/skill-matrix/static/js/runtime~main.2563de82.js",
+    "runtime~main.js.map": "/skill-matrix/static/js/runtime~main.2563de82.js.map",
+    "static/js/2.69883d6b.chunk.js": "/skill-matrix/static/js/2.69883d6b.chunk.js",
+    "static/js/2.69883d6b.chunk.js.map": "/skill-matrix/static/js/2.69883d6b.chunk.js.map",
+    "index.html": "/skill-matrix/index.html",
+    "precache-manifest.6c221db822d8f09d71bf31c25df51d77.js": "/skill-matrix/precache-manifest.6c221db822d8f09d71bf31c25df51d77.js",
+    "service-worker.js": "/skill-matrix/service-worker.js",
+    "static/css/main.5a77a170.chunk.css.map": "/skill-matrix/static/css/main.5a77a170.chunk.css.map"
+  }
+}
